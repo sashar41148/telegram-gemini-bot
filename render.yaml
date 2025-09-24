@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: telegram-gemini-bot
+    env: python
+    plan: free
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "gunicorn main:app"
+    envVars:
+      - key: TELEGRAM_TOKEN
+        value: 7955408930:AAGteNCuLYhIh07vzeNYMpQPT1zjtyRhokc
+      - key: GEMINI_API_KEY
+        value: AIzaSyAvX_PPsgdB_7JQXiXCTlcNFVVA_d2jhAg
